@@ -1,5 +1,5 @@
 <footer class="theme-dark-bg2">
-    <div class="tp-footer-area-two pt-160 pb-70">
+    <div class="tp-footer-area-two pt-50 pb-70">
         <div class="container">
             <div class="row">
 
@@ -17,10 +17,9 @@
                             </p>
 
                             <div class="tp-footer-info-social tp-footer-info-social-three">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-google"></i></a>
+                                <a href="#" style="background: #0866FF;"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" style="background: #000000;"><i class="fab fa-twitter"></i></a>
+                                <a href="#" style="background: #D304DD;"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
