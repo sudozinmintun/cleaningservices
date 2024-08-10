@@ -1,0 +1,31 @@
+superadmin@test.com
+
+$2y$12$wmOjCdjeYs/UABobBVdre.GkWOmn9WQwVZ1mFgV6mqLNajzkQ1n6W
+
+
+
+1. Upgrade Professional Website Design for all page
+
+2. Add Activities Page - Optional
+3. Add available cleaning service page (Photo, Title) - Optional
+    General Cleaning
+    Commercial CleaningDeep Cleaning
+    Move In/Move Out Cleaning
+    Specialized Cleaning
+    Eco Friendly Cleaning
+    Other
+
+4. Upgrade estimate form 
+    Need to add validation for estimate form
+
+
+Admin
+    Update Dashboard
+    Update all table design 
+
+
+If you wanna add company's logo and name and about your business and then contact information, please give me in detail.
+
+
+Company Name / Business Name 
+Logo
