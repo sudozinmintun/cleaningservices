@@ -58,6 +58,15 @@
     <main>
         @include('components.alert')
         @yield('content')
+
+
+        <div id="cookie-consent-banner">
+            <p style="color: white">
+                We use cookies to ensure you get the best experience on our website.
+            </p>
+            <button id="accept-cookies">Allow All Cookies</button>
+            <button id="reject-cookies">Reject</button>
+        </div>
     </main>
 
     @include('layout.footer')
@@ -74,6 +83,8 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
     {{-- <script src="{{ asset('frontend/js/script.js?v=1') }}"></script> --}}
     <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
+
+    <script src="{{ asset('assets/js/cookie.js') }}"></script>
 
     @yield('script')
 
