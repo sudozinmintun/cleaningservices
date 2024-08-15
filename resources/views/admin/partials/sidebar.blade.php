@@ -46,6 +46,16 @@
         @endcan
 
 
+        @can('list faq')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('manage_faq.index') }}">
+                    <i class="bi bi-question"></i>
+                    <span>Faq Management</span>
+                </a>
+            </li>
+        @endcan
+
+
         @can('list estimate page')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('admin.estimate') }}">

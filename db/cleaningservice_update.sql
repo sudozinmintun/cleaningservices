@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 10, 2024 at 05:39 PM
+-- Generation Time: Aug 15, 2024 at 07:35 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -38,7 +38,7 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:18:{i:0;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"create user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:1;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:9:\"edit user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:11:\"delete user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"list blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:4;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:11:\"create blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:5;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:9:\"edit blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:6;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"delete blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:7;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:18:\"list estimate page\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:8;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:9:\"list role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:9;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:9:\"list user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:10;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:15:\"list permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:11:\"create role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:12;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:9:\"edit role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:13;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:11:\"delete role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:14;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:17:\"create permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:15;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:15:\"edit permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:16;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:17:\"delete permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:17;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:12:\"list contact\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"Super-Admin\";s:1:\"c\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"c\";s:3:\"web\";}}}', 1723390702);
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:22:{i:0;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"create user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:1;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:9:\"edit user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:11:\"delete user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"list blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:4;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:11:\"create blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:5;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:9:\"edit blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:6;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"delete blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:7;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:18:\"list estimate page\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:8;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:9:\"list role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:9;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:9:\"list user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:10;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:15:\"list permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:11:\"create role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:12;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:9:\"edit role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:13;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:11:\"delete role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:14;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:17:\"create permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:15;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:15:\"edit permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:16;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:17:\"delete permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:17;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:12:\"list contact\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:18;a:3:{s:1:\"a\";i:26;s:1:\"b\";s:8:\"list faq\";s:1:\"c\";s:3:\"web\";}i:19;a:3:{s:1:\"a\";i:27;s:1:\"b\";s:10:\"create faq\";s:1:\"c\";s:3:\"web\";}i:20;a:3:{s:1:\"a\";i:28;s:1:\"b\";s:8:\"edit faq\";s:1:\"c\";s:3:\"web\";}i:21;a:3:{s:1:\"a\";i:29;s:1:\"b\";s:10:\"delete faq\";s:1:\"c\";s:3:\"web\";}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"Super-Admin\";s:1:\"c\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"c\";s:3:\"web\";}}}', 1723784165);
 
 -- --------------------------------------------------------
 
@@ -120,6 +120,20 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faqs`
+--
+
+CREATE TABLE `faqs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` text DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -176,7 +190,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (9, '2024_08_07_105219_create_posts_table', 2),
 (10, '2024_08_10_021518_create_contacts_table', 3),
 (11, '2024_08_10_104819_create_estimates_table', 4),
-(12, '2024_08_10_140210_create_visitors_table', 5);
+(12, '2024_08_10_140210_create_visitors_table', 5),
+(13, '2024_08_15_041541_create_faqs_table', 6);
 
 -- --------------------------------------------------------
 
@@ -258,7 +273,11 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 (22, 'create permission', 'web', '2024-08-10 06:38:44', '2024-08-10 06:38:44'),
 (23, 'edit permission', 'web', '2024-08-10 06:38:52', '2024-08-10 06:38:52'),
 (24, 'delete permission', 'web', '2024-08-10 06:38:59', '2024-08-10 06:38:59'),
-(25, 'list contact', 'web', '2024-08-10 08:26:31', '2024-08-10 08:26:31');
+(25, 'list contact', 'web', '2024-08-10 08:26:31', '2024-08-10 08:26:31'),
+(26, 'list faq', 'web', '2024-08-14 21:55:33', '2024-08-14 21:55:33'),
+(27, 'create faq', 'web', '2024-08-14 21:55:44', '2024-08-14 21:55:44'),
+(28, 'edit faq', 'web', '2024-08-14 21:55:59', '2024-08-14 21:55:59'),
+(29, 'delete faq', 'web', '2024-08-14 21:56:06', '2024-08-14 21:56:06');
 
 -- --------------------------------------------------------
 
@@ -355,7 +374,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('vQWUlFTHWWvoKWqeL3djFWXQAl0SVhI7QBjU9DGZ', 1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiSkRodnpndFU3UUZ4UDVRYXBXd0NLMHpZd1lRQTZ4R2xFSUF2RDBnUSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO30=', 1723304347);
+('O0DCYNAuxhjN9eVoeuGYOzmbgLoJTJbD3HXHVqUb', 2, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiY0tpaGhIVnVSNkdjcjh3U3ZpREtOelhFQ1dWeElHazBVVU5nQ0dwQyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1723700143);
 
 -- --------------------------------------------------------
 
@@ -379,8 +398,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@test.com', '2024-08-07 00:38:27', '$2y$12$MaeE5WvNKDXrZNXeJ2bERuZv5D2NcKLIcgWWZSiNEcaz6gXXjWE2G', 'FPmMdK2JQ7RtSW8NNW9uGp0hzIw2ApNgCbInuV5K1mAUICHCjw2e2wY0QLCr', '2024-08-07 00:38:27', '2024-08-10 08:38:36'),
-(2, 'Super Admin', 'superadmin@test.com', '2024-08-07 00:38:27', '$2y$12$HO9gzJ3O23q4649nPYdKPusUq67JgVwj/ErtjSXhB3r6tarIj3mC.', 'eZzCKWu8cXovVkIE8yPOj3QfMh17GpKYRiZ1Iy2cgu1VaJQH1skEkRwqlCN0', '2024-08-07 00:38:27', '2024-08-10 08:38:43');
+(1, 'Admin', 'admin@test.com', '2024-08-07 00:38:27', '$2y$12$MaeE5WvNKDXrZNXeJ2bERuZv5D2NcKLIcgWWZSiNEcaz6gXXjWE2G', 'gFyLuwYSNnfiW5qKQfkxW1Y66rGD1S91qZmg8FN1xBfqELT6cltV7jGXJ8z3', '2024-08-07 00:38:27', '2024-08-10 08:38:36'),
+(2, 'Super Admin', 'superadmin@test.com', '2024-08-07 00:38:27', '$2y$12$72BcAWBQL8Zhcb8Q21gxxurJDOlLfIFVUAHuxXjogN07kxtwUfLvG', 'eZzCKWu8cXovVkIE8yPOj3QfMh17GpKYRiZ1Iy2cgu1VaJQH1skEkRwqlCN0', '2024-08-07 00:38:27', '2024-08-14 22:35:42');
 
 -- --------------------------------------------------------
 
@@ -400,7 +419,7 @@ CREATE TABLE `visitors` (
 --
 
 INSERT INTO `visitors` (`id`, `visitor_count`, `created_at`, `updated_at`) VALUES
-(1, 22, '2024-08-10 07:11:05', '2024-08-10 08:32:11');
+(1, 49, '2024-08-10 07:11:05', '2024-08-14 21:42:47');
 
 --
 -- Indexes for dumped tables
@@ -436,6 +455,12 @@ ALTER TABLE `estimates`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `faqs`
+--
+ALTER TABLE `faqs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `jobs`
@@ -547,6 +572,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `faqs`
+--
+ALTER TABLE `faqs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -556,13 +587,13 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `posts`

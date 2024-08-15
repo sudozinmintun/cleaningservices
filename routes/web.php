@@ -8,10 +8,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EstimateController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManageFaqController;
 use App\Http\Controllers\PermissionController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -19,6 +21,7 @@ Route::resource('about', AboutController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('blog', BlogController::class);
 Route::resource('estimate', EstimateController::class);
+Route::resource('faq', FaqController::class);
 
 
 Route::get('admin/login', [AuthController::class, 'login'])->name('admin.login');
@@ -51,4 +54,5 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
 
     Route::resource('role', RoleController::class);
     Route::resource('permission', PermissionController::class);
+    Route::resource('manage_faq', ManageFaqController::class);
 });

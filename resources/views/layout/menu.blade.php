@@ -38,6 +38,12 @@
                                 </li>
 
                                 <li>
+                                    <a href="{{ route('faq.index') }}">
+                                        Faq
+                                    </a>
+                                </li>
+
+                                <li>
                                     <a href="{{ route('contact.index') }}">
                                         Contact Us
                                     </a>
