@@ -66,6 +66,15 @@
         @endcan
 
 
+        @can('list video')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('video.index') }}">
+                    <i class="bi bi-play"></i>
+                    <span>Video Management</span>
+                </a>
+            </li>
+        @endcan
+
         @can('list contact')
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('admin.contact') }}">

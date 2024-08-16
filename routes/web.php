@@ -15,6 +15,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageFaqController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\VideoController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('about', AboutController::class);
@@ -55,4 +56,5 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
     Route::resource('role', RoleController::class);
     Route::resource('permission', PermissionController::class);
     Route::resource('manage_faq', ManageFaqController::class);
+    Route::resource('video', VideoController::class);
 });

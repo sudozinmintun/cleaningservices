@@ -134,7 +134,6 @@
     </section>
 
 
-
     <section class="tp-quality-service-area pt-110 bg-gray-light pb-20">
         <div class="container">
             <div class="row">
@@ -161,7 +160,33 @@
                             </div>
                             <span>Commercial</span>
                             <h4 class="tp-quality-text-title m-0">
-                                <a href="{{ route('estimate.index') }}">Window Cleaning</a>
+                                <a href="{{ route('estimate.index') }}">
+                                    House Cleaning
+                                </a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xl-3 col-md-6">
+                    <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay="1.1s">
+                        <div class="tp-quality-img">
+                            <img src="{{ asset('assets/img/service/service-7.png') }}" class="img-fluid"
+                                alt="img not found">
+                        </div>
+                        <div class="tp-quality-text text-center">
+                            <div class="tp-quality-text-icon mb-10">
+                                <a href="{{ route('estimate.index') }}">
+                                    <i class="flaticon-pot tp-quality-text-icon1"></i>
+                                    <i class="fal fa-plus tp-quality-text-icon2"></i>
+                                </a>
+                            </div>
+                            <span>Commercial</span>
+                            <h4 class="tp-quality-text-title m-0">
+                                <a href="{{ route('estimate.index') }}">
+                                    Dining Room Cleaning
+                                </a>
                             </h4>
                         </div>
                     </div>
@@ -183,35 +208,13 @@
                             <span>Commercial</span>
                             <h4 class="tp-quality-text-title m-0">
                                 <a href="{{ route('estimate.index') }}">
-                                    Carpet Cleaning
+                                    Bathroom Cleaning
                                 </a>
                             </h4>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-xl-3 col-md-6">
-                    <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay="1.1s">
-                        <div class="tp-quality-img">
-                            <img src="{{ asset('assets/img/service/service-7.png') }}" class="img-fluid"
-                                alt="img not found">
-                        </div>
-                        <div class="tp-quality-text text-center">
-                            <div class="tp-quality-text-icon mb-10">
-                                <a href="{{ route('estimate.index') }}">
-                                    <i class="flaticon-pot tp-quality-text-icon1"></i>
-                                    <i class="fal fa-plus tp-quality-text-icon2"></i>
-                                </a>
-                            </div>
-                            <span>Commercial</span>
-                            <h4 class="tp-quality-text-title m-0">
-                                <a href="{{ route('estimate.index') }}">
-                                    Kitchen Cleaning
-                                </a>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="col-xl-3 col-md-6">
                     <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay="1.4s">
@@ -229,7 +232,7 @@
                             <span>Commercial</span>
                             <h4 class="tp-quality-text-title m-0">
                                 <a href="{{ route('estimate.index') }}">
-                                    House Cleaning
+                                    Kitchen Cleaning
                                 </a>
                             </h4>
                         </div>
@@ -248,7 +251,6 @@
             </div>
         </div>
     </section>
-
 
 
     <section class="tp-blog-area pt-90 pb-85">
@@ -285,7 +287,8 @@
                                 <div class="tp-blog-meta mb-10">
                                     <ul>
                                         <li>
-                                            <a href="{{ route('blog.show', $post->id) }}">// {{ $post->created_at->diffForHumans() }}</a>
+                                            <a href="{{ route('blog.show', $post->id) }}">//
+                                                {{ $post->created_at->diffForHumans() }}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -296,7 +299,7 @@
                                 </h4>
                                 <div class="tp-blog-link">
                                     <a href="{{ route('blog.show', $post->id) }}">
-                                        <i class="flaticon-enter"></i> 
+                                        <i class="flaticon-enter"></i>
                                         Continue Reading
                                     </a>
                                 </div>
@@ -307,5 +310,59 @@
             </div>
         </div>
     </section>
+
+
+    <section class="tp-quality-service-area pt-50 bg-gray-light pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-wrapper text-center mb-55" data-wow-delay=".2s">
+                        <h2 class="tp-section-title-two">Our <span>Working</span> Activities <br>Video</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-35">
+                @foreach ($videos as $video)
+                    <div class="col-xl-4 col-md-4 col-sm-12 col-lg-4">
+                        <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay=".5s">
+                            <video width="100%" height="240" controls>
+                                <source src="{{ Storage::url($video->video) }}" type="video/mp4">
+                                <source src="{{ Storage::url($video->video) }}" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+                            <h4 class="tp-quality-text-title m-0">
+                                <a href="{{ route('estimate.index') }}">Window Cleaning</a>
+                            </h4>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="tp-blog-area pt-90 pb-85">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title-wrapper text-center mb-55" data-wow-delay=".2s">
+                        <h2 class="tp-section-title-two">Checkout <span>Our</span> Photo <br> Gallery</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-35">
+                @foreach ($galleries as $gallery)
+                    <div class="col-xl-3 col-md-3 col-sm-12 col-lg-3">
+                        <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay=".5s">
+                            <img data-enlargeable src="{{ asset('data/gallery/' . $gallery) }}" alt
+                                style="width: 100%; height: 260px; background-size: center; object-fit: cover; border: 3px solid #064E2A; padding: 10px; border-radius: 50px 15px;">
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
 
 @endsection

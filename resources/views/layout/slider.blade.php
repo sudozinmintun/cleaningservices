@@ -5,7 +5,7 @@
             <div class="tp-single-slider-three tp-slider-height-three d-flex align-items-center swiper-slide"
                 data-swiper-autoplay="5000">
                 <div class="slider-img-three">
-                    <img src="{{ asset('assets/img/slider/slider1.jpg') }}" class="img-fluid" alt="img not found">
+                    <img src="{{ asset('assets/img/slider/slider1.png') }}" class="img-fluid" alt="img not found">
                 </div>
                 <div class="container">
                     <div class="row">
@@ -34,7 +34,7 @@
                 <div class="slide-bg" data-background="{{ asset('assets/img/slider/slider-bg-3.jpg') }}">
                 </div>
                 <div class="slider-img-three">
-                    <img src="{{ asset('assets/img/slider/slider2.jpg') }}" class="img-fluid" alt="img not found">
+                    <img src="{{ asset('assets/img/slider/slider2.png') }}" class="img-fluid" alt="img not found">
                 </div>
                 <div class="container">
                     <div class="row">

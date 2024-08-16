@@ -13,6 +13,19 @@ class HomeController extends Controller
         $visitor->visitor_count = $visitor->visitor_count + 1;
         $visitor->save();
 
-        return view('welcome');
+
+
+        $imageDirectory = public_path('data/gallery/');
+        $galleries = [];
+        if (is_dir($imageDirectory)) {
+            $imageFiles = scandir($imageDirectory);
+            foreach ($imageFiles as $file) {
+                if (is_file($imageDirectory . '/' . $file)) {
+                    $galleries[] = $file;
+                }
+            }
+        }
+
+        return view('welcome', compact('galleries'));
     }
 }
