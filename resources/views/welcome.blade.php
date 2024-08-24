@@ -365,4 +365,51 @@
     </section>
 
 
+    <div id="welcomeModal" class="modal fade" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="welcomeModalLabel">
+                        Welcome to Our Website!
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="{{ asset('assets/img/IMG_0678.png') }}" alt=""
+                        style="width: 100%; height: auto; background-size: cover; object-fit: cover; object-position: center;">
+
+                    <p class="py-2">
+                        Trust our premier cleaning service for honest, reliable, and meticulous cleaning. We ensure a
+                        spotless environment with our dedicated team and top-quality products. Experience cleanliness you
+                        can count on.
+                    </p>
+
+                    <p class="py-2">
+                        Please fill out the Estimate Form to get our service.
+                        <a href="{{ route('estimate.index') }}" style="color: blue">
+                            Estimate
+                        </a>
+                        Or enter your email, and we will contact you back.
+                    </p>
+
+                    <form method="POST" action="{{ route('subscribe.submit') }}" class="p-0" id="create-form">
+                        @csrf
+                        <div class="input-group mb-3">
+                            <input type="text" placeholder="Email Address" name="email_phone"
+                                value="{{ old('email_phone') }}" autocomplete="off" class="form-control">
+
+                            <button type="submit" class="theme-btn input-group-text" id="basic-addon2">
+                                <i class="flaticon-enter"></i>
+                                Subscribe
+                            </button>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection

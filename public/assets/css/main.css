@@ -9235,3 +9235,35 @@ form .form-group {
 #cookie-consent-banner button:hover {
   background: #45a049;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+.modal-content {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #12472c;
+  color: white;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+.modal-body {
+  font-size: 1rem;
+}

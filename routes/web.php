@@ -15,7 +15,10 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ManageFaqController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\SmsController;
+use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\VisitorController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('about', AboutController::class);
@@ -23,6 +26,7 @@ Route::resource('contact', ContactController::class);
 Route::resource('blog', BlogController::class);
 Route::resource('estimate', EstimateController::class);
 Route::resource('faq', FaqController::class);
+Route::post('subscribe/submit', [ContactController::class, 'subscribe'])->name('subscribe.submit');
 
 
 Route::get('admin/login', [AuthController::class, 'login'])->name('admin.login');
@@ -57,4 +61,7 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
     Route::resource('permission', PermissionController::class);
     Route::resource('manage_faq', ManageFaqController::class);
     Route::resource('video', VideoController::class);
+    Route::resource('visitor', VisitorController::class);
+    Route::resource('subscribe', SubscribeController::class);
+    Route::resource('sms', SmsController::class);
 });

@@ -40,3 +40,41 @@ function handleCookieConsent() {
 
 // Initialize cookie consent functionality
 handleCookieConsent();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if the user has visited before
+    if (!localStorage.getItem('modalShown')) {
+        // Initialize the Bootstrap modal
+        const modalElement = document.getElementById('welcomeModal');
+        const modal = new bootstrap.Modal(modalElement);
+
+        // Show the modal
+        modal.show();
+
+        // Close button event handler
+        document.querySelector('.btn-close').addEventListener('click', () => {
+            modal.hide();
+            localStorage.setItem('modalShown', 'true');
+        });
+
+        // Close the modal if clicking outside of it
+        modalElement.addEventListener('hidden.bs.modal', () => {
+            localStorage.setItem('modalShown', 'true');
+        });
+    }
+});
+

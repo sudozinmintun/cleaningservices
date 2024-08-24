@@ -63,7 +63,7 @@
                     <div class="col-lg-3">
                         <div class="ablog__sidebar mb-50">
                             <div class="widget mb-45 wow fadeInUp">
-                                <h3 class="sidebar__widget--title mb-30">Recent News </h3>
+                                <h3 class="sidebar__widget--title mb-30">Recent Posts </h3>
 
                                 @foreach ($recent_posts as $recent_post)
                                     <div class="sidebar--widget__post mb-20">

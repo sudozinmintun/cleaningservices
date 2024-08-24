@@ -7,6 +7,7 @@ use App\Models\Estimate;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 
@@ -34,12 +35,35 @@ class AdminController extends Controller
         }
 
 
-
-
         $totalVisitorCount = Visitor::sum('visitor_count');
         $totalUser = User::count();
         $totalPost = Post::count();
         $totalEstimate = Estimate::count();
+
+
+
+
+
+        // Site Visitor
+        $today = Carbon::today();
+        $todayCount = Visitor::whereDate('created_at', $today)->count();
+        view()->share('todayCount', $todayCount);
+
+        $startDate = Carbon::now()->startOfWeek(); // Start of the current week (Sunday by default)
+        $endDate = Carbon::now()->endOfWeek();     // End of the current week (Saturday by default)
+        $ThisWeek = Visitor::whereBetween('created_at', [$startDate, $endDate])->count();
+        view()->share('ThisWeek', $ThisWeek);
+
+
+        $currentMonth = Carbon::now()->format('m'); // Get the current month as a two-digit string
+        $currentMonthCount = Visitor::whereMonth('created_at', $currentMonth)->count();
+        view()->share('currentMonthCount', $currentMonthCount);
+
+
+        $currentYear = Carbon::now()->year; // Get the current year
+        $currentYearCount = Visitor::whereYear('created_at', $currentYear)->count();
+        view()->share('currentYearCount', $currentYearCount);
+
 
         return view('admin.dashboard', compact('estimateData', 'months', 'totalVisitorCount', 'totalUser', 'totalPost', 'totalEstimate'));
     }

@@ -197,6 +197,61 @@
         </div>
     </div>
 
+    <div class="card radius-10">
+        <div class="card-header border-bottom-0 bg-transparent">
+            <div class="d-lg-flex align-items-center">
+                <div>
+                    <h6 class="font-weight-bold mb-2 mb-lg-0">
+                        Site Visitor
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th class="text-center">
+                            Total
+                        </th>
+                        <th class="text-center">
+                            Today
+                        </th>
+                        <th class="text-center">
+                            This Week
+                        </th>
+                        <th class="text-center">
+                            This Month
+                        </th>
+                        <th class="text-center">
+                            This Year
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            {{ number_format($totalVisitorCount) }}
+                        </td>
+                        <td class="text-center">
+                            {{ number_format($todayCount) }}
+                        </td>
+                        <td class="text-center">
+                            {{ number_format($ThisWeek) }}
+                        </td>
+                        <td class="text-center">
+                            {{ number_format($currentMonthCount) }}
+                        </td>
+                        <td class="text-center">
+                            {{ number_format($currentYearCount) }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 
 
     <div class="card radius-10">

@@ -53,13 +53,15 @@
     <script src="{{ asset('admin/vendor/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('admin/js/main.js') }}"></script>
 
-    <script>
-        new DataTable('.datatable');
-    </script>
+
 
     <script type="text/javascript" src="{{ url('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
 
     @yield('script')
+
+    <script>
+        new DataTable('.datatable');
+    </script>
 
 </body>
 

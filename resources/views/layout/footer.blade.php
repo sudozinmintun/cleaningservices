@@ -1,4 +1,41 @@
 <footer class="theme-dark-bg2">
+
+    <div class="tp-footer-subscribe-area-two position-relative pt-50">
+        <div class="container">
+            <div class="tp-footer-subscribe-bg-two theme-yellow-bg pt-30 pb-20 z-index pl-60 pr-60">
+                <div class="row align-items-center">
+                    <div class="col-xl-5 col-lg-4">
+                        <div class="tp-footer-subscribe">
+                            <h3 class="tp-footer-subscribe-title" style="font-size: 25px;">
+                                Join Our Newsletter and Marketing Communication
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="tp-footer-subscribe-form">
+                            <form method="POST" action="{{ route('subscribe.submit') }}" class="p-0"
+                                id="create-form">
+                                @csrf
+                                <div class="tp-footer-subscribe-form-field mb-10">
+                                    <input type="text" placeholder="Email Address or Phone Number" name="email_phone"
+                                        value="{{ old('email_phone') }}" autocomplete="off">
+                                    <i class="fal fa-paper-plane"></i>
+                                </div>
+                                <div class="tp-footer-subscribe-form-btn mb-10">
+                                    <button type="submit" class="theme-btn">
+                                        <i class="flaticon-enter"></i>
+                                        Subscribe
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="tp-footer-area-two pt-50 pb-70">
         <div class="container">
             <div class="row">
@@ -63,6 +100,8 @@
         </div>
     </div>
 
+
+
     <div class="tp-copyright-area-two theme-dark-bg3 z-index pt-30 pb-30">
         <div class="container">
             <div class="row">
@@ -78,3 +117,17 @@
     </div>
 
 </footer>
+
+
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-consent-banner" class="alert alert-warning" style="display: none;">
+    <p>This website uses cookies to ensure you get the best experience.
+        <button id="accept-cookies" class="btn btn-primary btn-sm">Accept</button>
+        <button id="reject-cookies" class="btn btn-secondary btn-sm">Reject</button>
+    </p>
+</div>
+
+@section('script')
+    {!! JsValidator::formRequest('App\Http\Requests\StoreSubscribe', '#create-form') !!}
+@endsection

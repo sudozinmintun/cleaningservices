@@ -84,6 +84,33 @@
             </li>
         @endcan
 
+        @can('list visitor')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('visitor.index') }}">
+                    <i class="bi bi-eye"></i>
+                    <span>Site Visitor</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('list subscribe')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('subscribe.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Subscribe Users</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('message history')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('sms.index') }}">
+                    <i class="bi bi-hourglass-split"></i>
+                    <span>Message History</span>
+                </a>
+            </li>
+        @endcan
+
     </ul>
 
 </aside>
