@@ -19,12 +19,8 @@
 
     <div class="container">
         <div class="card">
-            <div class="card-header"><b>Message History</b>
-                @can('create role')
-                    <div class="float-end">
-                        <a href="{{ route('role.create') }}" class="btn btn-primary">Add New</a>
-                    </div>
-                @endcan
+            <div class="card-header">
+                <b>Message History</b>
             </div>
 
             <div class="card-body">
