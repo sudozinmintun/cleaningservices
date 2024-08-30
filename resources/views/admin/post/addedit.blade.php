@@ -37,10 +37,12 @@
                         <label for="name">Title</label>
                         <input type="text" class="form-control" name="title" value="{{ $post->title ?? '' }}">
                     </div>
+                    
                     <div class="form-group">
                         <label for="description">Description</label>
                         <textarea name="description" class="tinymce-editor">{!! $post->description ?? '' !!}</textarea>
                     </div>
+
                     <div class="form-group">
                         <label for="password">Featured Image</label>
                         <input type="file" class="form-control" name="image" value="">

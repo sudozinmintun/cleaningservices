@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 24, 2024 at 02:20 PM
+-- Generation Time: Aug 30, 2024 at 07:13 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -38,7 +38,7 @@ CREATE TABLE `cache` (
 --
 
 INSERT INTO `cache` (`key`, `value`, `expiration`) VALUES
-('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:23:{i:0;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"create user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:1;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:9:\"edit user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:11:\"delete user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"list blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:4;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:11:\"create blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:5;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:9:\"edit blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:6;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"delete blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:7;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:18:\"list estimate page\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:8;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:9:\"list role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:9;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:9:\"list user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:10;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:15:\"list permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:11:\"create role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:12;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:9:\"edit role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:13;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:11:\"delete role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:14;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:17:\"create permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:15;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:15:\"edit permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:16;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:17:\"delete permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:17;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:12:\"list contact\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:18;a:4:{s:1:\"a\";i:26;s:1:\"b\";s:8:\"list faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:19;a:4:{s:1:\"a\";i:27;s:1:\"b\";s:10:\"create faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:20;a:4:{s:1:\"a\";i:28;s:1:\"b\";s:8:\"edit faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:21;a:4:{s:1:\"a\";i:29;s:1:\"b\";s:10:\"delete faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:22;a:4:{s:1:\"a\";i:30;s:1:\"b\";s:15:\"message history\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"Super-Admin\";s:1:\"c\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"c\";s:3:\"web\";}}}', 1724585541);
+('spatie.permission.cache', 'a:3:{s:5:\"alias\";a:4:{s:1:\"a\";s:2:\"id\";s:1:\"b\";s:4:\"name\";s:1:\"c\";s:10:\"guard_name\";s:1:\"r\";s:5:\"roles\";}s:11:\"permissions\";a:25:{i:0;a:4:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"create user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:1;a:4:{s:1:\"a\";i:3;s:1:\"b\";s:9:\"edit user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:2;a:4:{s:1:\"a\";i:4;s:1:\"b\";s:11:\"delete user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:3;a:4:{s:1:\"a\";i:5;s:1:\"b\";s:9:\"list blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:4;a:4:{s:1:\"a\";i:6;s:1:\"b\";s:11:\"create blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:5;a:4:{s:1:\"a\";i:7;s:1:\"b\";s:9:\"edit blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:6;a:4:{s:1:\"a\";i:8;s:1:\"b\";s:11:\"delete blog\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:7;a:4:{s:1:\"a\";i:9;s:1:\"b\";s:18:\"list estimate page\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:8;a:4:{s:1:\"a\";i:10;s:1:\"b\";s:9:\"list role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:9;a:4:{s:1:\"a\";i:17;s:1:\"b\";s:9:\"list user\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:2:{i:0;i:1;i:1;i:2;}}i:10;a:4:{s:1:\"a\";i:18;s:1:\"b\";s:15:\"list permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:11;a:4:{s:1:\"a\";i:19;s:1:\"b\";s:11:\"create role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:12;a:4:{s:1:\"a\";i:20;s:1:\"b\";s:9:\"edit role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:13;a:4:{s:1:\"a\";i:21;s:1:\"b\";s:11:\"delete role\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:14;a:4:{s:1:\"a\";i:22;s:1:\"b\";s:17:\"create permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:15;a:4:{s:1:\"a\";i:23;s:1:\"b\";s:15:\"edit permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:16;a:4:{s:1:\"a\";i:24;s:1:\"b\";s:17:\"delete permission\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:17;a:4:{s:1:\"a\";i:25;s:1:\"b\";s:12:\"list contact\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:18;a:4:{s:1:\"a\";i:26;s:1:\"b\";s:8:\"list faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:19;a:4:{s:1:\"a\";i:27;s:1:\"b\";s:10:\"create faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:20;a:4:{s:1:\"a\";i:28;s:1:\"b\";s:8:\"edit faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:21;a:4:{s:1:\"a\";i:29;s:1:\"b\";s:10:\"delete faq\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:22;a:4:{s:1:\"a\";i:30;s:1:\"b\";s:15:\"message history\";s:1:\"c\";s:3:\"web\";s:1:\"r\";a:1:{i:0;i:2;}}i:23;a:3:{s:1:\"a\";i:31;s:1:\"b\";s:18:\"list subscribe sms\";s:1:\"c\";s:3:\"web\";}i:24;a:3:{s:1:\"a\";i:32;s:1:\"b\";s:20:\"list subscribe email\";s:1:\"c\";s:3:\"web\";}}s:5:\"roles\";a:2:{i:0;a:3:{s:1:\"a\";i:2;s:1:\"b\";s:11:\"Super-Admin\";s:1:\"c\";s:3:\"web\";}i:1;a:3:{s:1:\"a\";i:1;s:1:\"b\";s:5:\"Admin\";s:1:\"c\";s:3:\"web\";}}}', 1725073719);
 
 -- --------------------------------------------------------
 
@@ -195,7 +195,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2024_08_16_082429_create_videos_table', 7),
 (16, '2024_08_19_040153_add_ip_to_visitors_table', 8),
 (17, '2024_08_22_063314_create_subscribes_table', 9),
-(19, '2024_08_24_120739_create_send_histories_table', 10);
+(19, '2024_08_24_120739_create_send_histories_table', 10),
+(20, '2024_08_30_041132_add_subject_to_send_histories_table', 11);
 
 -- --------------------------------------------------------
 
@@ -282,7 +283,9 @@ INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at
 (27, 'create faq', 'web', '2024-08-14 21:55:44', '2024-08-14 21:55:44'),
 (28, 'edit faq', 'web', '2024-08-14 21:55:59', '2024-08-14 21:55:59'),
 (29, 'delete faq', 'web', '2024-08-14 21:56:06', '2024-08-14 21:56:06'),
-(30, 'message history', 'web', '2024-08-24 04:32:10', '2024-08-24 04:32:10');
+(30, 'message history', 'web', '2024-08-24 04:32:10', '2024-08-24 04:32:10'),
+(31, 'list subscribe sms', 'web', '2024-08-29 20:08:35', '2024-08-29 20:08:35'),
+(32, 'list subscribe email', 'web', '2024-08-29 20:08:40', '2024-08-29 20:08:40');
 
 -- --------------------------------------------------------
 
@@ -375,7 +378,8 @@ CREATE TABLE `send_histories` (
   `message` text DEFAULT NULL,
   `to` text DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `subject` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -398,8 +402,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('70lcddZzBLJLxL3JXPFkHFWG0avKLPN0rHPfCoFY', 2, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiaHZLMUFuMnNjRWIyUk80QlBZalBIZzYxeFlpQ21Nc05Pb2JxR3d3aCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mzc6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9hZG1pbi9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1724499255),
-('rNNeucjlhysshstqSpY2dGWduANVyrh4Y7r3a0nS', 2, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiUkljOXJoMkdlTng0SEV5RUVtWEhWcWZ2ZWhyaTJYSTVFZUt4MFRLZSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9zbXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1724501763);
+('0Z2wFjOnkZjpv2m5msq9FuiVo9COzYpmRO5eqs2e', 2, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiR0xkQnc0U05ncXg4WVBkbU43Ykc0TFpQMGVhOUZNYUdodFhQVFZ2RSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDM6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9zdWJzY3JpYmUvZW1haWwiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToyO30=', 1724994822);
 
 -- --------------------------------------------------------
 
@@ -722,7 +725,16 @@ INSERT INTO `visitors` (`id`, `visitor_count`, `created_at`, `updated_at`, `ip`,
 (245, 1, '2024-08-24 05:05:11', '2024-08-24 05:05:11', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
 (246, 1, '2024-08-24 05:06:14', '2024-08-24 05:06:14', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
 (247, 1, '2024-08-24 05:06:23', '2024-08-24 05:06:23', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
-(248, 1, '2024-08-24 05:06:35', '2024-08-24 05:06:35', '127.0.0.1', 'WebKit', 'Linux', 'Chrome');
+(248, 1, '2024-08-24 05:06:35', '2024-08-24 05:06:35', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(249, 1, '2024-08-24 05:22:09', '2024-08-24 05:22:09', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(250, 1, '2024-08-27 10:40:30', '2024-08-27 10:40:30', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(251, 1, '2024-08-27 10:50:21', '2024-08-27 10:50:21', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(252, 1, '2024-08-27 10:50:28', '2024-08-27 10:50:28', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(253, 1, '2024-08-27 10:51:42', '2024-08-27 10:51:42', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(254, 1, '2024-08-29 19:31:03', '2024-08-29 19:31:03', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(255, 1, '2024-08-29 20:07:24', '2024-08-29 20:07:24', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(256, 1, '2024-08-29 20:07:33', '2024-08-29 20:07:33', '127.0.0.1', 'WebKit', 'Linux', 'Chrome'),
+(257, 1, '2024-08-29 21:09:40', '2024-08-29 21:09:40', '127.0.0.1', 'WebKit', 'Linux', 'Chrome');
 
 --
 -- Indexes for dumped tables
@@ -908,13 +920,13 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `posts`
@@ -956,7 +968,7 @@ ALTER TABLE `videos`
 -- AUTO_INCREMENT for table `visitors`
 --
 ALTER TABLE `visitors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=258;
 
 --
 -- Constraints for dumped tables

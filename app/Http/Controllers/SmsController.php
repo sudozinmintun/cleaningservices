@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\sendEmail;
 use App\Http\Requests\sendSMS;
 use App\Models\SendHistory;
 use Twilio\Rest\Client;
@@ -16,6 +17,8 @@ class SmsController extends Controller
         $send_histories = SendHistory::all();
         return view('admin.message_history.index', compact('send_histories'));
     }
+
+
 
     public function store(sendSMS $request)
     {
@@ -36,16 +39,6 @@ class SmsController extends Controller
         $phoneNumbers = array_unique($phoneNumbers);
         $emails = array_unique($emails);
 
-        // Send Mail 
-        foreach ($emails as $email) {
-            $subject = 'Cleaning service Company';
-            $emailContent = $this->composeEmailContent($messageContent);
-
-            if (!$this->sendEmail($email, $subject, $emailContent)) {
-                Log::error('Failed to send email to: ' . $email);
-            }
-        }
-
 
         // Send SMS
         foreach ($phoneNumbers as $phoneNumber) {
@@ -61,25 +54,6 @@ class SmsController extends Controller
         $send->save();
 
         return redirect()->back()->with('success', 'Your processing has been completed.');
-    }
-
-
-    private function composeEmailContent($messageContent)
-    {
-        return "<html><body>
-                    <h4>Cleaning service Company</h4>
-                    <p>" . htmlspecialchars($messageContent) . "</p>
-                </body></html>";
-    }
-
-    private function sendEmail($to, $subject, $emailContent)
-    {
-        $headers = 'From: ' . env('MAIL_FROM_ADDRESS') . "\r\n";
-        $headers .= "Reply-To: Cleaning service Company <" . env('MAIL_FROM_ADDRESS') . ">\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-
-        return mail($to, $subject, $emailContent, $headers);
     }
 
 
@@ -107,5 +81,69 @@ class SmsController extends Controller
         }
 
         return false;
+    }
+
+
+
+
+
+
+    // Send Mail 
+
+    public function sendMail(sendEmail $request)
+    {
+        $message = $request->message;
+        $subject = $request->subject;
+
+        // Collect and validate selected emails
+        $selectedData = $request->input('selectedData', []);
+        $emails = array_filter($selectedData, function ($item) {
+            return filter_var($item, FILTER_VALIDATE_EMAIL);
+        });
+
+        // Remove duplicate entries
+        $emails = array_unique($emails);
+
+        // Send Mail
+        foreach ($emails as $email) {
+            if (!$this->sendEmailToSubscribers($email, $request)) {
+                Log::error('Failed to send email to: ' . $email);
+            }
+        }
+
+        // Save the history of sent emails
+        $send = new SendHistory();
+        $send->message = $message;
+        $send->subject = $subject;
+        $send->to = json_encode($emails);
+
+        try {
+            $send->save();
+            return redirect()->back()->with('success', 'Your processing has been completed.');
+        } catch (\Exception $e) {
+            Log::error('Failed to save send history: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to save send history.');
+        }
+    }
+
+    protected function sendEmailToSubscribers($email, $request)
+    {
+        try {
+
+            $emailContent = view('admin.subscribe.mail_template', compact('request'))->render();
+
+            $subject = $request->subject ?? '';
+
+            $headers  = "From: Cleaning Service <" . env('MAIL_FROM_ADDRESS') . ">\r\n";
+            $headers .= "Reply-To: Cleaning Service <" . env('MAIL_FROM_ADDRESS') . ">\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n"; 
+
+
+            return mail($email, $subject, $emailContent, $headers);
+        } catch (\Exception $e) {
+            Log::error('Failed to send email to: ' . $email . ' with error: ' . $e->getMessage());
+            return false;
+        }
     }
 }

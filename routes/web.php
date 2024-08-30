@@ -62,6 +62,10 @@ Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
     Route::resource('manage_faq', ManageFaqController::class);
     Route::resource('video', VideoController::class);
     Route::resource('visitor', VisitorController::class);
-    Route::resource('subscribe', SubscribeController::class);
+
+    Route::get('/subscribe/sms', [SubscribeController::class, 'index'])->name('subscribe.sms');
+    Route::get('/subscribe/email', [SubscribeController::class, 'email_subscribers'])->name('subscribe.email');
+    Route::post('/send/email', [SmsController::class, 'sendMail'])->name('send.email');
+
     Route::resource('sms', SmsController::class);
 });

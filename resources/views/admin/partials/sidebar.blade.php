@@ -93,11 +93,20 @@
             </li>
         @endcan
 
-        @can('list subscribe')
+        @can('list subscribe sms')
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('subscribe.index') }}">
+                <a class="nav-link collapsed" href="{{ route('subscribe.sms') }}">
                     <i class="bi bi-person"></i>
-                    <span>Subscribe Users</span>
+                    <span>Subscribe SMS Users</span>
+                </a>
+            </li>
+        @endcan
+
+        @can('list subscribe email')
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('subscribe.email') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Subscribe Email Users</span>
                 </a>
             </li>
         @endcan

@@ -10,7 +10,7 @@
                         </a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Subscribe SMS Users
+                        Subscribe Email Users
                     </li>
                 </ol>
             </nav>
@@ -20,7 +20,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <b>Subscribe SMS Users</b>
+                <b>Subscribe Email Users</b>
             </div>
             <div class="card-body">
                 <style>
@@ -50,18 +50,56 @@
                     }
                 </style>
 
-                <form action="{{ route('sms.store') }}" method="post" autocomplete="off" id="create-form">
+                <form action="{{ route('send.email') }}" method="post" autocomplete="off" id="create-form">
                     @csrf
 
-                    <div class="input-group py-2">
-                        <input type="text" class="form-control" placeholder="Enter Message" name="message">
-                        <button class="btn btn-primary" type="submit" id="button-addon1" disabled>
-                            Send Message
-                        </button>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        Send Mail
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <label for="inputPassword6" class="col-form-label">
+                                                Subject
+                                            </label>
+                                        </div>
+                                        <div class="col-9">
+                                            <input type="text" name="subject" placeholder="Subject" class="form-control" value="{{ old('Subject') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row py-3">
+                                        <div class="col-2">
+                                            <label for="inputPassword6" class="col-form-label">
+                                                Message
+                                            </label>
+                                        </div>
+                                        <div class="col-9">
+                                            <textarea name="message" class="tinymce-editor">{{ old('message') }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary" id="button-addon1" disabled>Send</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <table class="table datatable" id="datatable">
-                        
                         <thead>
                             <tr>
                                 <th style="width: 5%;">
@@ -72,7 +110,6 @@
                                 <th style="width: 10%; text-align: center;">Date</th>
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach ($subscribes as $key => $subscribe)
                                 <tr title="Select">
@@ -93,6 +130,10 @@
                         </tbody>
                     </table>
 
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Send Mail
+                    </button>
+                    
                 </form>
             </div>
         </div>
@@ -100,7 +141,7 @@
 @endsection
 
 @section('script')
-    {!! JsValidator::formRequest('App\Http\Requests\sendSMS', '#create-form') !!}
+    {!! JsValidator::formRequest('App\Http\Requests\sendEmail', '#create-form') !!}
 
     <script>
         $('#datatable').DataTable({
