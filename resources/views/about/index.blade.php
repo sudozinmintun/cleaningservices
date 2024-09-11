@@ -2,7 +2,19 @@
 @section('title', 'About Us')
 @section('content')
 
-    <div class="tp-page-title-area pt-180 pb-185 position-relative fix"
+    <style>
+        .hide-on-mobile {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .hide-on-mobile {
+                display: block;
+            }
+        }
+    </style>
+
+    <div class="tp-page-title-area pt-180 pb-185 position-relative fix hide-on-mobile"
         data-background="{{ asset('assets/img/breadcrumb-bg-1.png') }}">
         <div class="tp-custom-container">
             <div class="row">
@@ -30,16 +42,14 @@
     </div>
 
 
-    <section class="tp-about-area position-relative pt-120 fix">
-        <div class="tp-about-shape">
-            <img src="{{ asset('assets/img/about/about-shape-1.jpg') }}" class="img-fluid" alt="img not found">
-        </div>
 
+    <section class="tp-about-area position-relative pt-90 fix">
         <div class="container">
             <div class="row justify-content-xl-between justify-content-md-center">
                 <div class="col-xl-5 col-12">
                     <div class="tp-about-img z-index wow fadeInUp" data-wow-delay=".3s">
-                        <img src="{{ asset('assets/img/about/about.jpg') }}" alt="img not found">
+                        <img src="{{ asset('assets/img/about/about.jpg') }}" alt="img not found"
+                            style="border: 5px solid #EDF3F1;">
                     </div>
                 </div>
 

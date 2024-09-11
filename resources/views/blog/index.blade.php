@@ -3,10 +3,11 @@
 @section('content')
 
     <section>
-        <div class="container" style="padding-top: 25px; padding-bottom: 20px;">
+        <div class="container pb-4 pt-3 pt-lg-5">
+
             <div class="row">
 
-                <div class="col-12">
+                <div class="col-12 py-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">

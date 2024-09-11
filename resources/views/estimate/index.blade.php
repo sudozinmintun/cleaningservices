@@ -3,10 +3,10 @@
 @section('content')
 
     <section>
-        <div class="container" style="padding-top: 25px; padding-bottom: 20px;">
+        <div class="container pb-4 pt-3 pt-lg-5">
             <div class="row">
 
-                <div class="col-12">
+                <div class="col-12 py-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
@@ -20,33 +20,48 @@
                 </div>
 
                 <div class="col-md-12">
-
+                    @include('components.alert')
                     <form id="store-form" action="{{ route('estimate.store') }}" method="POST" autocomplete="off">
                         @csrf
 
-                        <ul id="progressbar" class="nav nav-pills">
+                        <style>
+                            @media (max-width: 768px) {
+                                #progressbar {
+                                    flex-direction: column;
+                                    /* Stack items vertically on mobile */
+                                }
 
-                            <li class="nav-item active" id="step1">
-                                <a class="nav-link">Personal Details</a>
-                            </li>
+                                #progressbar .nav-link {
+                                    text-align: center;
+                                    /* Center the text */
+                                    padding: 10px;
+                                }
+                            }
+                        </style>
+                        <div class="container">
+                            <ul id="progressbar" class="nav nav-pills d-flex justify-content-between flex-wrap">
+                                <li class="nav-item active" id="step1">
+                                    <a class="nav-link">Personal Details</a>
+                                </li>
 
-                            <li class="nav-item" id="step2">
-                                <a class="nav-link">Your Property</a>
-                            </li>
+                                <li class="nav-item" id="step2">
+                                    <a class="nav-link">Your Property</a>
+                                </li>
 
-                            <li class="nav-item" id="step3">
-                                <a class="nav-link">Cleaning Service</a>
-                            </li>
+                                <li class="nav-item" id="step3">
+                                    <a class="nav-link">Cleaning Service</a>
+                                </li>
 
-                            <li class="nav-item" id="step4">
-                                <a class="nav-link">More Details</a>
-                            </li>
+                                <li class="nav-item" id="step4">
+                                    <a class="nav-link">More Details</a>
+                                </li>
 
-                            <li class="nav-item" id="step5">
-                                <a class="nav-link">Complete</a>
-                            </li>
+                                <li class="nav-item" id="step5">
+                                    <a class="nav-link">Complete</a>
+                                </li>
+                            </ul>
+                        </div>
 
-                        </ul>
 
                         <div class="progress mt-3">
                             <div class="progress-bar" role="progressbar"></div>
@@ -125,9 +140,11 @@
                             <h2 class="text-center">Cleaning Service</h2>
 
                             <div class="form-group">
-                                <label class="label-font" for="clean_service_period">How Often Would You Like Cleaning
-                                    Service</label>
-                                <select name="clean_service_period" class="form-control" required>
+                                <label class="label-font" for="clean_service_period">
+                                    How Often Would You Like Cleaning Service
+                                </label>
+                                <select name="clean_service_period" class="form-control" required
+                                    id="clean_service_period">
                                     <option value="Weekly">Weekly</option>
                                     <option value="Bi-Weekly">Bi-Weekly</option>
                                     <option value="Monthly">Monthly</option>
@@ -136,7 +153,7 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="other_input_group">
                                 <label class="label-font" for="clean_service_period_other">Other</label>
                                 <input type="text" class="form-control" name="clean_service_period_other">
                             </div>
@@ -177,9 +194,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="clean_service_other">
                                 <label class="label-font" for="clean_service_other">Other</label>
-                                <input type="text" class="form-control" name="clean_service_other">
+                                <input type="text" class="form-control" name="clean_service_other"
+                                    id="clean_service_other">
                             </div>
 
                             <div class="form-group">
@@ -374,6 +392,36 @@
             });
 
             showStep(currentStep);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var selectElement = document.getElementById('clean_service_period');
+            var otherInputGroup = document.getElementById('other_input_group');
+
+            // Toggle visibility based on the current selection
+            selectElement.addEventListener('change', function() {
+                otherInputGroup.style.display = (selectElement.value === 'Other') ? 'block' : 'none';
+            });
+
+            // Initialize visibility on page load
+            otherInputGroup.style.display = (selectElement.value === 'Other') ? 'block' : 'none';
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var otherCheckbox = document.getElementById('Other');
+            var otherInputGroup = document.getElementById('clean_service_other');
+
+            // Toggle visibility based on checkbox status
+            otherCheckbox.addEventListener('change', function() {
+                otherInputGroup.style.display = otherCheckbox.checked ? 'block' : 'none';
+            });
+
+            // Initialize visibility on page load
+            otherInputGroup.style.display = otherCheckbox.checked ? 'block' : 'none';
         });
     </script>
 

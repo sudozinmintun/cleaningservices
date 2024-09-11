@@ -1,5 +1,5 @@
 <body style="padding:0px; margin:0px; background-color:#fff;font-family:arial,helvetica,sans-serif,verdana,'Open Sans'">
-    <script src="{{asset('assets/js/jssor.slider-28.1.0.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/jssor.slider-28.1.0.min.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript">
         window.jssor_1_slider_init = function() {
@@ -347,11 +347,21 @@
             </mask>
         </defs>
     </svg>
+    <style>
+        .img-height {
+            height: 900px;
+        }
 
-    <div id="jssor_1"
-        style="position:relative;margin:0 auto;top:0px;left:0px; width:1600px; height:900px;overflow:hidden;visibility:hidden;">
-        <div data-u="slides"
-            style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:900px;overflow:hidden;">
+        @media (max-width: 767px) {
+            .img-height {
+                height: 1500px;
+            }
+        }
+    </style>
+    <div class="img-height" id="jssor_1"
+        style="position:relative;margin:0 auto;top:0px;left:0px; width:1600px; overflow:hidden;visibility:hidden;">
+        <div class="img-height" data-u="slides"
+            style="cursor:default;position:relative;top:0px;left:0px;width:1600px;overflow:hidden;">
 
             <div>
                 <img data-u="image" data-src="{{ asset('assets/img/slider/slider2.png') }}" />

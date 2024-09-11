@@ -68,6 +68,7 @@
 
                 <div class="col-lg-8">
                     <div class="tp-contact-form">
+                        @include('components.alert')
                         <form action="{{ route('contact.store') }}" method="POST" autocomplete="off" id="create-form">
                             @csrf
 

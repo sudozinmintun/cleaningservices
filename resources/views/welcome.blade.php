@@ -62,16 +62,12 @@
     </section>
 
 
-    <section class="tp-about-area position-relative pt-120 fix">
-        <div class="tp-about-shape">
-            <img src="{{ asset('assets/img/about/about-shape-1.jpg') }}" class="img-fluid" alt="img not found">
-        </div>
-
+    <section class="tp-about-area position-relative pt-90 fix">
         <div class="container">
             <div class="row justify-content-xl-between justify-content-md-center">
                 <div class="col-xl-5 col-12">
                     <div class="tp-about-img z-index wow fadeInUp" data-wow-delay=".3s">
-                        <img src="{{ asset('assets/img/about/about.jpg') }}" alt="img not found">
+                        <img src="{{ asset('assets/img/about/about.jpg') }}" alt="img not found" style="border: 5px solid #EDF3F1;">
                     </div>
                 </div>
 
@@ -90,9 +86,9 @@
                             is a must for all move in and out's of new homes.
                         </p>
 
-                        <div class="row mb-10 py-2">
+                        <div class="row mb-10 py-3 pt-5">
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="tp-about-service mb-30">
                                     <div class="tp-about-service-icon yellow-circle-shape mb-15">
                                         <i class="flaticon-business-and-trade"></i>
@@ -110,7 +106,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
                                 <div class="tp-about-service mb-30">
                                     <div class="tp-about-service-icon yellow-circle-shape mb-15">
                                         <i class="flaticon-snowfall"></i>
@@ -339,7 +335,6 @@
             </div>
         </div>
     </section>
-
 
 
     <section class="tp-blog-area pt-90 pb-85">

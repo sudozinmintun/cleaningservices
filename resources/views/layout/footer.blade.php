@@ -131,3 +131,5 @@
 @section('script')
     {!! JsValidator::formRequest('App\Http\Requests\StoreSubscribe', '#create-form') !!}
 @endsection
+
+

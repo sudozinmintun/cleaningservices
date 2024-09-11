@@ -57,10 +57,7 @@
     @include('layout.menu')
 
     <main>
-        @include('components.alert')
         @yield('content')
-
-
         <div id="cookie-consent-banner">
             <p style="color: white">
                 We use cookies to ensure you get the best experience on our website.
@@ -88,7 +85,6 @@
     <script src="{{ asset('assets/js/cookie.js') }}"></script>
 
     @yield('script')
-
 
     <script>
         $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
