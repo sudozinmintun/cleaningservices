@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="{{ asset('assets/css/fontawesome.min.css') }}">
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> --}}
 </head>
 
 <body>
@@ -87,8 +86,10 @@
     @yield('script')
 
     <script>
-        $('img[data-enlargeable]').addClass('img-enlargeable').click(function() {
+        $(document).on('click', 'img[data-enlargeable]', function() {
             var src = $(this).attr('src');
+            $('#preview-image').attr('src', src);
+
             var modal;
 
             function removeModal() {

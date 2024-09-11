@@ -26,7 +26,7 @@ class StoreEstimate extends FormRequest
             'email' => 'required|email|max:255',
             'phone' => 'required|digits_between:10,15',
             'p_type' => 'required',
-            'no_bed_bath' => 'required',
+            'no_bed' => 'required',
             'f_type' => 'required',
             's_room' => 'required',
             'clean_service_period' => 'required',

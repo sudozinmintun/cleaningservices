@@ -17,7 +17,8 @@ return new class extends Migration
             $table->text('phone')->nullable();
             $table->text('email')->nullable();
             $table->text('p_type')->nullable();
-            $table->text('no_bed_bath')->nullable();
+            $table->text('no_bed')->nullable();
+            $table->text('no_bath')->nullable();
             $table->text('f_type')->nullable();
             $table->text('s_room')->nullable();
             $table->text('clean_service_period')->nullable();

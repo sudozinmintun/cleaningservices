@@ -38,6 +38,7 @@
                                 }
                             }
                         </style>
+
                         <div class="container">
                             <ul id="progressbar" class="nav nav-pills d-flex justify-content-between flex-wrap">
                                 <li class="nav-item active" id="step1">
@@ -61,7 +62,6 @@
                                 </li>
                             </ul>
                         </div>
-
 
                         <div class="progress mt-3">
                             <div class="progress-bar" role="progressbar"></div>
@@ -105,8 +105,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="label-font" for="no_bed_bath">Number of Bedrooms/Bathrooms</label>
-                                <input type="text" class="form-control" name="no_bed_bath" id="no_bed_bath" required>
+                                <label class="label-font" for="no_bed">Number of Bedrooms</label>
+                                <input type="text" class="form-control" name="no_bed" id="no_bed" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="label-font" for="no_bath">Number of Bathrooms</label>
+                                <input type="text" class="form-control" name="no_bath" id="no_bath" required>
                             </div>
 
                             <div class="form-group">
@@ -340,7 +345,7 @@
             fields.forEach(id => document.getElementById(id).addEventListener('input', checkFormValidity));
 
 
-            const stpe_two_fields = ['no_bed_bath'];
+            const stpe_two_fields = ['no_bed', 'no_bath'];
             const nextStepTwoButton = document.getElementById('step-two-button');
             const stpeTwoCheckFormValidity = () => {
                 nextStepTwoButton.disabled = stpe_two_fields.some(id => !document.getElementById(id).value

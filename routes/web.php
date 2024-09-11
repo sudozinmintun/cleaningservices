@@ -21,6 +21,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\VisitorController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/load-gallery', [HomeController::class, 'loadGallery']);
 Route::resource('about', AboutController::class);
 Route::resource('contact', ContactController::class);
 Route::resource('blog', BlogController::class);

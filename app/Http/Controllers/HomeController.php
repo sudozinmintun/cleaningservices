@@ -33,6 +33,25 @@ class HomeController extends Controller
             }
         }
 
-        return view('welcome', compact('galleries'));
+        // Initially display only 6 images
+        $initialGalleries = array_slice($galleries, 0, 8);
+
+        return view('welcome', compact('initialGalleries', 'galleries'));
+    }
+
+
+    public function loadGallery(Request $request)
+    {
+        $imageDirectory = public_path('data/gallery/');
+        $galleries = [];
+        $limit = $request->input('limit', 8);  // Default limit is 6
+        $offset = $request->input('offset', 0);
+
+        if (is_dir($imageDirectory)) {
+            $imageFiles = array_diff(scandir($imageDirectory), array('.', '..'));
+            $galleries = array_slice($imageFiles, $offset, $limit);
+        }
+
+        return response()->json(['galleries' => $galleries]);
     }
 }

@@ -38,7 +38,6 @@
                 <div class="col"> {{ $estimate->email }} </div>
             </div>
 
-
             <hr>
             <div class="row">
                 <div class="col">Type of property</div>
@@ -48,8 +47,14 @@
 
             <hr>
             <div class="row">
-                <div class="col">Number of bedroom/bathroom</div>
-                <div class="col"> {{ $estimate->no_bed_bath }} </div>
+                <div class="col">Number of Bedrooms</div>
+                <div class="col"> {{ $estimate->no_bed }} </div>
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col">Number of Bathrooms</div>
+                <div class="col"> {{ $estimate->no_bath }} </div>
             </div>
 
             <hr>

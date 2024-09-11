@@ -21,7 +21,8 @@ class EstimateController extends Controller
         $estimate->phone = $request->phone;
         $estimate->email = $request->email;
         $estimate->p_type = $request->p_type;
-        $estimate->no_bed_bath = $request->no_bed_bath;
+        $estimate->no_bed = $request->no_bed;
+        $estimate->no_bath = $request->no_bath;
         $estimate->f_type = $request->f_type;
         $estimate->s_room = $request->s_room;
         $estimate->clean_service_period = $request->clean_service_period;

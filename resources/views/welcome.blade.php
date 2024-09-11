@@ -67,7 +67,8 @@
             <div class="row justify-content-xl-between justify-content-md-center">
                 <div class="col-xl-5 col-12">
                     <div class="tp-about-img z-index wow fadeInUp" data-wow-delay=".3s">
-                        <img src="{{ asset('assets/img/about/about.jpg') }}" alt="img not found" style="border: 5px solid #EDF3F1;">
+                        <img src="{{ asset('assets/img/about/about.jpg') }}" alt="img not found"
+                            style="border: 5px solid #EDF3F1;">
                     </div>
                 </div>
 
@@ -347,14 +348,22 @@
                 </div>
             </div>
             <div class="row mb-35">
-                @foreach ($galleries as $gallery)
-                    <div class="col-xl-3 col-md-3 col-sm-12 col-lg-3">
-                        <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay=".5s">
-                            <img data-enlargeable src="{{ asset('data/gallery/' . $gallery) }}" alt
-                                style="width: 100%; height: 260px; background-size: center; object-fit: cover; border: 3px solid #064E2A; padding: 10px; border-radius: 50px 15px;">
+                <div id="gallery-container" class="row">
+                    @foreach ($initialGalleries as $gallery)
+                        <div class="col-xl-3 col-md-3 col-sm-12 col-lg-3">
+                            <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay=".5s">
+                                <img data-enlargeable class="gallery-image" src="{{ asset('data/gallery/' . $gallery) }}"
+                                    alt
+                                    style="width: 100%; height: 260px; background-size: center; object-fit: cover; border: 3px solid #064E2A; padding: 10px; border-radius: 50px 15px;">
+                            </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
+
+                <div class="text-center">
+                    <button id="load-more" class="btn btn-primary">Load More</button>
+                </div>
+
             </div>
         </div>
     </section>
@@ -407,4 +416,37 @@
         </div>
     </div>
 
+@endsection
+@section('script')
+    <script>
+        let offset = {{ count($initialGalleries) }}; // Initially loaded images count
+        const limit = 8; // How many images to load at once
+
+        document.getElementById('load-more').addEventListener('click', function() {
+            fetch(`/load-gallery?offset=${offset}&limit=${limit}`)
+                .then(response => response.json())
+                .then(data => {
+                    const galleryContainer = document.getElementById('gallery-container');
+
+                    data.galleries.forEach(gallery => {
+                        const galleryItem = `
+                        <div class="col-xl-3 col-md-3 col-sm-12 col-lg-3">
+                            <div class="tp-quality mb-30 wow fadeInUp" data-wow-delay=".5s">
+                                <img data-enlargeable src="/data/gallery/${gallery}" alt
+                                    style="width: 100%; height: 260px; background-size: center; object-fit: cover; border: 3px solid #064E2A; padding: 10px; border-radius: 50px 15px;">
+                            </div>
+                        </div>`;
+                        galleryContainer.insertAdjacentHTML('beforeend', galleryItem);
+                    });
+
+                    offset += limit; // Update offset for the next load
+
+                    // Optionally, disable Load More button if no more images to load
+                    if (data.galleries.length < limit) {
+                        document.getElementById('load-more').disabled = true;
+                    }
+                })
+                .catch(error => console.error('Error loading gallery:', error));
+        });
+    </script>
 @endsection
