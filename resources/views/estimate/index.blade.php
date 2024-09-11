@@ -202,13 +202,13 @@
 
                             <div class="form-group">
                                 <label class="label-font" for="pets">Do You Have Pets in the House?</label>
-                                <select name="pets" class="form-control" required>
+                                <select name="pets" class="form-control" required id="pets">
                                     <option value="No">No</option>
                                     <option value="Yes">Yes</option>
                                 </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="pet_type">
                                 <label class="label-font" for="pet_type">Pet Type</label>
                                 <input type="text" class="form-control" name="pet_type">
                             </div>
@@ -422,6 +422,22 @@
 
             // Initialize visibility on page load
             otherInputGroup.style.display = otherCheckbox.checked ? 'block' : 'none';
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var selectElement = document.getElementById('pets');
+            var pet_type = document.getElementById('pet_type');
+
+            // Toggle visibility based on the current selection
+            selectElement.addEventListener('change', function() {
+                pet_type.style.display = (selectElement.value === 'Yes') ? 'block' : 'none';
+            });
+
+            // Initialize visibility on page load
+            pet_type.style.display = (selectElement.value === 'Yes') ? 'block' : 'none';
         });
     </script>
 
