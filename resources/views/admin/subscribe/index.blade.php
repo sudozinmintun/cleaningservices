@@ -49,7 +49,7 @@
                         background-color: #e0e0e0;
                     }
                 </style>
-
+                @include('admin.partials.flash')
                 <form action="{{ route('sms.store') }}" method="post" autocomplete="off" id="create-form">
                     @csrf
 

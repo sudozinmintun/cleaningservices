@@ -42,14 +42,20 @@
                         @foreach ($send_histories as $key => $send_history)
                             <tr>
                                 <td>{{ $key + 1 }}</td>
-                                <td>{{ $send_history->message ?? '' }}</td>
+                                <td>{!! $send_history->message ?? '' !!}</td>
 
                                 <td>
-                                    @foreach ($send_history->to as $to_data)
-                                        <span class="badge bg-primary">
-                                            {{ $to_data ?? '' }}
-                                        </span>
-                                    @endforeach
+                                    @php
+                                        $to_emails = json_decode($send_history->to, true);
+                                    @endphp
+
+                                    @if (is_array($to_emails))
+                                        @foreach ($to_emails as $to_data)
+                                            <span class="badge bg-primary">
+                                                {{ $to_data ?? '' }}
+                                            </span>
+                                        @endforeach
+                                    @endif
                                 </td>
 
                                 <td>

@@ -24,6 +24,7 @@ class SmsController extends Controller
     {
         $messageContent = $request->message;
 
+        // Gather selected phone numbers and emails
         $selectedData = $request->input('selectedData', []);
         $phoneNumbers = [];
         $emails = [];
@@ -35,39 +36,56 @@ class SmsController extends Controller
                 $phoneNumbers[] = $item;
             }
         }
+
         // Remove duplicate entries
         $phoneNumbers = array_unique($phoneNumbers);
         $emails = array_unique($emails);
 
-
-        // Send SMS
+        // Send SMS and log results
         foreach ($phoneNumbers as $phoneNumber) {
-            if (!$this->sendSms($phoneNumber, $messageContent)) {
+            if ($this->sendSMS($phoneNumber, $messageContent)) {
+                Log::info('Successfully sent SMS to: ' . $phoneNumber);
+            } else {
                 Log::error('Failed to send SMS to: ' . $phoneNumber);
             }
         }
 
-
+        // Save send history in database
+        $selectedData = array_unique($selectedData);
         $send = new SendHistory();
         $send->message = $messageContent;
-        $send->to = array_unique($selectedData);
-        $send->save();
+        $send->to = json_encode($selectedData);
 
-        return redirect()->back()->with('success', 'Your processing has been completed.');
+        try {
+            $send->save();
+            return redirect()->back()->with('success', 'Your processing has been completed.');
+        } catch (\Exception $e) {
+            Log::error('Error saving SendHistory: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to save send history. Please try again.');
+        }
     }
+
 
 
     private function sendSMS($to, $messageContent)
     {
+        // Twilio credentials
         $sid = getenv("TWILIO_ACCOUNT_SID");
         $token = getenv("TWILIO_AUTH_TOKEN");
         $senderNumber = getenv("TWILIO_FROM");
 
+        // Check if Twilio credentials are properly set
+        if (!$sid || !$token || !$senderNumber) {
+            Log::error('Twilio credentials are not properly set.');
+            return false;
+        }
+
         $twilio = new Client($sid, $token);
 
         try {
+            // Attempt to send the SMS
             $twilio->messages->create(
-                $to, // to receive number
+                $to,
                 [
                     'body' => $messageContent,
                     'from' => $senderNumber
@@ -75,8 +93,32 @@ class SmsController extends Controller
             );
             return true;
         } catch (\Twilio\Exceptions\RestException $e) {
-            Log::error('Twilio API error: ' . $e->getMessage());
+            // Twilio API specific errors
+            Log::error('Twilio API error (' . $e->getCode() . '): ' . $e->getMessage());
+            switch ($e->getCode()) {
+                case 20404: // Invalid phone number
+                    Log::error('Invalid phone number: ' . $to);
+                    break;
+                case 21610: // Opt-out
+                    Log::error('Recipient has opted out of receiving SMS: ' . $to);
+                    break;
+                case 21614: // Invalid destination number
+                    Log::error('Invalid destination number: ' . $to);
+                    break;
+                case 21408: // Permission denied
+                    Log::error('Permission denied for sending SMS to: ' . $to);
+                    break;
+                case 20003: // Authentication error
+                    Log::error('Twilio authentication failed.');
+                    break;
+                default:
+                    Log::error('An unknown Twilio API error occurred.');
+            }
+        } catch (\GuzzleHttp\Exception\RequestException $e) {
+            // Handle network-related issues
+            Log::error('Network error: ' . $e->getMessage());
         } catch (\Exception $e) {
+            // Handle any other general exceptions
             Log::error('General error: ' . $e->getMessage());
         }
 
@@ -88,8 +130,8 @@ class SmsController extends Controller
 
 
 
-    // Send Mail 
 
+    // Send Mail 
     public function sendMail(sendEmail $request)
     {
         $message = $request->message;
@@ -122,9 +164,11 @@ class SmsController extends Controller
             return redirect()->back()->with('success', 'Your processing has been completed.');
         } catch (\Exception $e) {
             Log::error('Failed to save send history: ' . $e->getMessage());
-            return redirect()->back()->with('error', 'Failed to save send history.');
+            return redirect()->back()->with('error', 'Failed to save send history:' . $e->getMessage());
         }
     }
+
+
 
     protected function sendEmailToSubscribers($email, $request)
     {
@@ -137,7 +181,7 @@ class SmsController extends Controller
             $headers  = "From: Cleaning Service <" . env('MAIL_FROM_ADDRESS') . ">\r\n";
             $headers .= "Reply-To: Cleaning Service <" . env('MAIL_FROM_ADDRESS') . ">\r\n";
             $headers .= "MIME-Version: 1.0\r\n";
-            $headers .= "Content-Type: text/html; charset=UTF-8\r\n"; 
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
 
             return mail($email, $subject, $emailContent, $headers);
