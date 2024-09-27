@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.3/css/dataTables.dataTables.css">
     {{-- <link href="{{ asset('admin/vendor/simple-datatables/style.css') }}" rel="stylesheet"> --}}
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     @auth
         <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet">
     @endauth

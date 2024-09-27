@@ -22,7 +22,7 @@
             <div class="card-header">
                 <b>Site Visitor</b>
             </div>
-
+            
             <div class="card-body">
                 <table class="table datatable">
                     <thead>
@@ -32,7 +32,8 @@
                             <th>Devices</th>
                             <th>Platform</th>
                             <th>Browser</th>
-                            <th>Date</th>
+                            <th>Address</th>
+                            <th>Map</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,7 +44,35 @@
                                 <td>{{ $visitor->devices ?? '-' }}</td>
                                 <td>{{ $visitor->platform ?? '-' }}</td>
                                 <td>{{ $visitor->browser ?? '-' }}</td>
-                                <td>{{ $visitor->created_at->diffForHumans() }}</td>
+                                <td>{{ $visitor->address ?? '-' }}</td>
+                                <td>
+                                    @if ($visitor->latitude && $visitor->longitude)
+                                        <div id="map-{{ $visitor->id }}" style="height: 200px; width: 200px;"></div>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                const map{{ $visitor->id }} = L.map('map-{{ $visitor->id }}').setView([{{ $visitor->latitude }},
+                                                    {{ $visitor->longitude }}
+                                                ], 13);
+                                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                                    maxZoom: 19,
+                                                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                                }).addTo(map{{ $visitor->id }});
+
+                                                L.marker([{{ $visitor->latitude }}, {{ $visitor->longitude }}]).addTo(map{{ $visitor->id }})
+                                                    .bindPopup('Location: {{ $visitor->address }}')
+                                                    .openPopup();
+                                            });
+                                        </script>
+
+                                        <a href="https://www.google.com/maps?q={{ $visitor->latitude }},{{ $visitor->longitude }}"
+                                            target="_blank">Google</a>
+                                        |
+                                        <a href="https://www.openstreetmap.org/?mlat={{ $visitor->latitude }}&mlon={{ $visitor->longitude }}#map=13/{{ $visitor->latitude }}/{{ $visitor->longitude }}"
+                                            target="_blank">Open Street</a>
+                                    @else
+                                        <p>Location not available</p>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

@@ -10,10 +10,12 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Cleaning Service" />
     <meta property="og:description " content="Cleaning Service" />
-    <meta property="og:url" content="https://everjobsolutions.com" />
+    <meta property="og:url" content="" />
     <meta property="og:site_name" content="Cleaning Service" />
     <meta property="og:image:alt" content="Cleaning Service" />
     <meta name="author" content="Cleaning Service">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <meta name="keywords"
         content="cleaning service, residential cleaning, commercial cleaning, office cleaning, house cleaning, deep cleaning, move-in/move-out cleaning, carpet cleaning, window cleaning, janitorial services, maid service, cleaning company, cleaning professionals, professional cleaners, eco-friendly cleaning, sanitization, disinfecting services, floor cleaning, upholstery cleaning, cleaning solutions, local cleaning services, cleaning contractors, cleaning experts, reliable cleaning, affordable cleaning, cleaning service near me, top cleaning service, cleaning service reviews, cleaning service quotes, customized cleaning, cleaning service provider, cleaning and maintenance, regular cleaning, one-time cleaning, spring cleaning, cleaning services for businesses, cleaning services for homes, cleaning service specialists, professional housekeepers">

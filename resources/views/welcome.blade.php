@@ -417,6 +417,7 @@
     </div>
 
 @endsection
+
 @section('script')
     <script>
         let offset = {{ count($initialGalleries) }}; // Initially loaded images count
@@ -449,4 +450,51 @@
                 .catch(error => console.error('Error loading gallery:', error));
         });
     </script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+        function requestUserLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const lat = position.coords.latitude;
+                        const lon = position.coords.longitude;
+                        sendLocationToServer(lat, lon);
+                    },
+                    (error) => {
+                        console.error("Error getting location: ", error);
+                    }
+                );
+            } else {
+                console.log("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function sendLocationToServer(lat, lon) {
+            const url = "{{ route('storelocation') }}"; // Assuming your route name is 'store.location'
+
+            fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        latitude: lat,
+                        longitude: lon
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Location and address saved successfully:", data);
+                })
+                .catch(error => {
+                    console.error("Error saving location:", error);
+                });
+        }
+
+        requestUserLocation();
+    </script>
+
 @endsection

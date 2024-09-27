@@ -28,6 +28,7 @@ Route::resource('blog', BlogController::class);
 Route::resource('estimate', EstimateController::class);
 Route::resource('faq', FaqController::class);
 Route::post('subscribe/submit', [ContactController::class, 'subscribe'])->name('subscribe.submit');
+Route::post('storelocation', [HomeController::class, 'storeLocation'])->name('storelocation');
 
 
 Route::get('admin/login', [AuthController::class, 'login'])->name('admin.login');

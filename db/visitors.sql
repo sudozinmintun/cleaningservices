@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 11, 2024 at 06:46 PM
+-- Generation Time: Sep 27, 2024 at 09:35 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -24,34 +24,21 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `estimates`
+-- Table structure for table `visitors`
 --
 
-CREATE TABLE `estimates` (
+CREATE TABLE `visitors` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` text DEFAULT NULL,
-  `phone` text DEFAULT NULL,
-  `email` text DEFAULT NULL,
-  `p_type` text DEFAULT NULL,
-  `no_bed` text DEFAULT NULL,
-  `no_bath` text DEFAULT NULL,
-  `f_type` text DEFAULT NULL,
-  `s_room` text DEFAULT NULL,
-  `clean_service_period` text DEFAULT NULL,
-  `clean_service_period_other` text DEFAULT NULL,
-  `clean_service` text DEFAULT NULL,
-  `clean_service_other` text DEFAULT NULL,
-  `pets` text DEFAULT NULL,
-  `pet_type` text DEFAULT NULL,
-  `allergies_sensitives` text DEFAULT NULL,
-  `present` text DEFAULT NULL,
-  `access` text DEFAULT NULL,
-  `attension` text DEFAULT NULL,
-  `request` text DEFAULT NULL,
-  `hear` text DEFAULT NULL,
-  `extra` text DEFAULT NULL,
+  `visitor_count` int(11) DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `ip` text DEFAULT NULL,
+  `devices` text DEFAULT NULL,
+  `platform` text DEFAULT NULL,
+  `browser` text DEFAULT NULL,
+  `latitude` text DEFAULT NULL,
+  `longitude` text DEFAULT NULL,
+  `address` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -59,9 +46,9 @@ CREATE TABLE `estimates` (
 --
 
 --
--- Indexes for table `estimates`
+-- Indexes for table `visitors`
 --
-ALTER TABLE `estimates`
+ALTER TABLE `visitors`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -69,9 +56,9 @@ ALTER TABLE `estimates`
 --
 
 --
--- AUTO_INCREMENT for table `estimates`
+-- AUTO_INCREMENT for table `visitors`
 --
-ALTER TABLE `estimates`
+ALTER TABLE `visitors`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 COMMIT;
 

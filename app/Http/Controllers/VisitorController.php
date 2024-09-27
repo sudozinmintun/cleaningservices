@@ -12,10 +12,6 @@ class VisitorController extends Controller
     {
         $visitors = Visitor::all();
 
-
-       
-
-
         $totalCount = Visitor::count();
         view()->share('totalCount', $totalCount);
 
